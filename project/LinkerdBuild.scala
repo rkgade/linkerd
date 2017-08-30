@@ -160,8 +160,7 @@ object LinkerdBuild extends Base {
       .withLib(Deps.zkCandidate)
       .withTests()
 
-    val all = aggregateDir("namer", core, consul, curator, dnssrv, fs, k8s, istio, marathon, serversets, zkLeader)
-
+    val all = aggregateDir("namer", core, consul, curator, fs, k8s, istio, marathon, serversets, zkLeader)
   }
 
   val admin = projectDir("admin")
