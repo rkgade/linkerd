@@ -103,9 +103,9 @@ class BufferedStream(underlying: Stream, bufferCapacity: Long = 8.kilobytes.byte
   @volatile private[this] var pullState: PullState = Idle
 
   /**
-    * Read a Frame from the underlying Stream and write it into the buffer and offer it to the child
-    * Streams.
-    */
+   * Read a Frame from the underlying Stream and write it into the buffer and offer it to the child
+   * Streams.
+   */
   private[this] def pull(): Future[Unit] = {
     if (underlying.isEmpty) {
       Future.Unit
